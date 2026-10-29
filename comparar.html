@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Pascali Cakes · Comparar propuestas</title>
+  <link rel="icon" href="assets/logo-instagram.jpg">
+  <style>
+    :root { --ink: #23302f; --mist: #d7e6e6; --berry: #6b1235; --bg: #f3f3ef; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, sans-serif; }
+    header { padding: 28px 32px 8px; }
+    h1 { margin: 0; font-size: 28px; }
+    header p { margin: 6px 0 0; max-width: 70ch; }
+    main { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 24px 32px 48px; }
+    section { background: #fff; padding: 22px; display: grid; gap: 14px; align-content: start; }
+    h2 { margin: 0; font-size: 22px; }
+    .tag { justify-self: start; background: var(--mist); padding: 2px 12px; font-weight: 700; font-size: 14px; }
+    .b .tag { background: #f3dbe4; color: var(--berry); }
+    .frames { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start; }
+    .desk, .phone { position: relative; overflow: hidden; background: var(--ink); }
+    .desk { aspect-ratio: 1440 / 900; }
+    .desk iframe { width: 1440px; height: 900px; transform-origin: 0 0; border: 0; }
+    .phone { width: 160px; height: 346px; border: 4px solid var(--ink); }
+    .phone iframe { width: 390px; height: 844px; transform: scale(0.389); transform-origin: 0 0; border: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .actions a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 700; }
+    .b .actions a { background: var(--berry); }
+    .actions a + a { background: var(--mist) !important; color: var(--ink); }
+    ul { margin: 0; padding-left: 18px; }
+    @media (max-width: 1100px) { main { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pascali Cakes · dos propuestas</h1>
+    <p>Mismo contenido, mismas fotos del Instagram y el mismo pedido por WhatsApp; cambia la forma de contar la marca.</p>
+  </header>
+  <main>
+    <section>
+      <span class="tag">Opción A</span>
+      <h2>El nombre como monumento</h2>
+      <p>«Pascali» ocupa todo el ancho, con «Cakes» en la caligrafía del logo cruzándolo; detrás, tres columnas de sus pasteles se funden una en otra. Bruma azul del logo, pizarra y fucsia para pedir.</p>
+      <div class="frames">
+        <div class="desk" data-desk><iframe src="opcion-a/" title="Opción A en escritorio" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="phone"><iframe src="opcion-a/" title="Opción A en celular" loading="lazy" tabindex="-1"></iframe></div>
+      </div>
+      <ul>
+        <li>Inicio de cine: el nombre gigante sobre fotos que cambian solas.</li>
+        <li>El proceso en cuatro verbos enormes: Escoger, Hornear, Pintar, Llevar.</li>
+        <li>Pedido en vivo: la foto cambia con el estilo y avisa si alcanza la fecha.</li>
+      </ul>
+      <div class="actions"><a href="opcion-a/">Ver opción A</a><a href="opcion-a/#pedido">Probar el pedido</a></div>
+    </section>
+    <section class="b">
+      <span class="tag">Opción B · principal</span>
+      <h2>El escenario dividido</h2>
+      <p>Media pantalla nunca se mueve: muestra el pastel del momento mientras la otra mitad se lee como una tarjeta de floristería, impresa en una sola tinta color baya tomada de sus flores.</p>
+      <div class="frames">
+        <div class="desk" data-desk><iframe src="index.html" title="Opción B en escritorio" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="phone"><iframe src="index.html" title="Opción B en celular" loading="lazy" tabindex="-1"></iframe></div>
+      </div>
+      <ul>
+        <li>59 diseños en 7 temáticas con filtros (florales, bodas, vintage y coquette, pintados, fruta, celebraciones, mesas), casi todos en alta resolución.</li>
+        <li>Bodas como lista: tocas una pareja y su pastel se abre en el escenario.</li>
+        <li>Pedido en vivo: un recibo que se imprime con tus elecciones y las fechas reales.</li>
+      </ul>
+      <div class="actions"><a href="index.html">Ver opción B</a><a href="index.html#pedido">Probar el pedido</a></div>
+    </section>
+  </main>
+  <script>
+    // scale each desktop frame to its box
+    const fit = () => document.querySelectorAll("[data-desk]").forEach((d) => {
+      d.firstElementChild.style.transform = `scale(${d.clientWidth / 1440})`;
+    });
+    addEventListener("resize", fit);
+    fit();
+  </script>
+</body>
+</html>
